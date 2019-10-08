@@ -7,185 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c465b6a-9701-4312-bb29-31271ae7e09a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mmall.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/common/Const.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/common/ResponseCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/common/ServerResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/common/TokenCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/dao/CartMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/dao/CategoryMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/dao/OrderItemMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/dao/OrderMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/dao/PayInfoMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/dao/ProductMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/dao/ShippingMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/dao/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/pojo/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/pojo/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/pojo/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/pojo/OrderItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/pojo/PayInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/pojo/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/pojo/Shipping.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/pojo/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/service/IUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/utils/MD5Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmall/utils/PropertiesUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-datasource.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/datasource.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/CartMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/CategoryMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/OrderItemMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/OrderMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/PayInfoMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/ProductMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/ShippingMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mmall.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/log4j.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/applicationContext-datasource.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/common/Const$Role.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/common/Const.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/common/ResponseCode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/common/ServerResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/common/TokenCache$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/common/TokenCache.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/controller/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/dao/CartMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/dao/CategoryMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/dao/OrderItemMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/dao/OrderMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/dao/PayInfoMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/dao/ProductMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/dao/ShippingMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/dao/UserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/pojo/Cart.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/pojo/Category.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/pojo/Order.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/pojo/OrderItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/pojo/PayInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/pojo/Product.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/pojo/Shipping.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/pojo/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/service/IUserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/utils/MD5Utils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mmall/utils/PropertiesUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/datasource.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mappers/CartMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mappers/CategoryMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mappers/OrderItemMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mappers/OrderMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mappers/PayInfoMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mappers/ProductMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mappers/ShippingMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mappers/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mmall.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall.war" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/applicationContext-datasource.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/common/Const$Role.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/common/Const.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/common/ResponseCode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/common/ServerResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/common/TokenCache$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/common/TokenCache.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/controller/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/dao/CartMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/dao/CategoryMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/dao/OrderItemMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/dao/OrderMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/dao/PayInfoMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/dao/ProductMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/dao/ShippingMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/dao/UserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/pojo/Cart.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/pojo/Category.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/pojo/Order.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/pojo/OrderItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/pojo/PayInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/pojo/Product.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/pojo/Shipping.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/pojo/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/service/IUserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/utils/MD5Utils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/mmall/utils/PropertiesUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/datasource.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/generatorConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/mappers/CartMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/mappers/CategoryMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/mappers/OrderItemMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/mappers/OrderMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/mappers/PayInfoMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/mappers/ProductMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/mappers/ShippingMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/mappers/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/mmall.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/aopalliance-1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/aspectjrt-1.6.11.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/aspectjweaver-1.7.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/commons-codec-1.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/commons-collections-3.2.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/commons-configuration-1.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/commons-dbcp-1.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/commons-fileupload-1.2.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/commons-io-2.0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/commons-lang-2.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/commons-lang3-3.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/commons-logging-1.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/commons-net-3.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/commons-pool-1.5.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/commons-pool2-2.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/core-2.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/gson-2.3.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/guava-20.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/hamcrest-core-1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/hashids-1.0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/jackson-core-asl-1.9.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/jackson-mapper-asl-1.9.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/jedis-2.9.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/joda-time-2.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/jsqlparser-0.9.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/junit-4.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/logback-classic-1.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/logback-core-1.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/mybatis-3.4.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/mybatis-paginator-1.2.17.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/mybatis-spring-1.3.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/mysql-connector-java-5.1.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/pagehelper-4.1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/slf4j-api-1.7.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/spring-aop-4.0.0.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/spring-beans-4.0.0.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/spring-context-4.0.0.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/spring-core-4.0.0.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/spring-expression-4.0.0.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/spring-jdbc-4.0.0.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/spring-oxm-4.0.0.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/spring-test-4.0.0.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/spring-tx-4.0.0.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/spring-web-4.0.0.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/spring-webmvc-4.0.0.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/lib/tomcat-servlet-api-7.0.64.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/log4j.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mmall/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mmall.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/mmall.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mmall/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/mmall/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -200,7 +23,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mmall/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2275">
+            <state relative-caret-position="141">
               <caret line="110" column="72" selection-start-line="110" selection-start-column="72" selection-end-line="110" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -212,8 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mmall/service/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="142" column="53" lean-forward="true" selection-start-line="142" selection-start-column="53" selection-end-line="142" selection-end-column="53" />
+            <state relative-caret-position="2673">
+              <caret line="199" column="46" lean-forward="true" selection-start-line="199" selection-start-column="46" selection-end-line="200" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -241,6 +64,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/mmall/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mmall/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/luzhibin.pub" />
+        <option value="$PROJECT_DIR$/12558.pub" />
       </list>
     </option>
   </component>
@@ -325,13 +150,13 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570499474566" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570504911991" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -478,16 +303,15 @@
       <workItem from="1570272436544" duration="3731000" />
       <workItem from="1570331438653" duration="5029000" />
       <workItem from="1570412045341" duration="2299000" />
-      <workItem from="1570496103512" duration="1554000" />
+      <workItem from="1570496103512" duration="4385000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12613000" />
+    <option name="totallyTimeSpent" value="15444000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="930" y="0" width="1528" height="1057" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="Image Layers" order="1" />
@@ -495,11 +319,11 @@
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Web" order="5" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.19414169" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.19414169" />
       <window_info id="JRebel" order="7" side_tool="true" />
       <window_info id="Structure" order="8" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Spring" order="0" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.3303671" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.3303671" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="4" weight="0.326257" />
@@ -511,7 +335,7 @@
       <window_info anchor="bottom" id="Application Servers" order="10" weight="0.3288889" />
       <window_info anchor="bottom" id="Message" order="11" />
       <window_info anchor="bottom" id="Find" order="12" />
-      <window_info anchor="bottom" id="Run" order="13" weight="0.19666667" />
+      <window_info anchor="bottom" id="Run" order="13" weight="0.19577308" />
       <window_info anchor="bottom" id="Debug" order="14" weight="0.41555557" />
       <window_info anchor="bottom" id="Cvs" order="15" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="16" weight="0.4" />
@@ -813,9 +637,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/1255863672">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1255863672.pub">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mmall/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2275">
+        <state relative-caret-position="141">
           <caret line="110" column="72" selection-start-line="110" selection-start-column="72" selection-end-line="110" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -823,10 +653,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/luzhibin">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luzhibin.pub">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12558">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12558.pub">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mmall/service/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="142" column="53" lean-forward="true" selection-start-line="142" selection-start-column="53" selection-end-line="142" selection-end-column="53" />
+        <state relative-caret-position="2673">
+          <caret line="199" column="46" lean-forward="true" selection-start-line="199" selection-start-column="46" selection-end-line="200" selection-end-column="52" />
         </state>
       </provider>
     </entry>
