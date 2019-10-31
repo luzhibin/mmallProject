@@ -22,7 +22,6 @@ public interface IUserService {
     ServerResponse<User> updateInformation(User user);
 
     ServerResponse<User> getInformation(Integer userId);
-
     //校验是否是管理员
     ServerResponse checkAdminRole(User user);
 }

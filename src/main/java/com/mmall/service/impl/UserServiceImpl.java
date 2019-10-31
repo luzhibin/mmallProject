@@ -54,14 +54,12 @@ public class UserServiceImpl implements IUserService {
         }
         //检查邮箱是否存在
         validResponse = this.checkValid(user.getEmail(), Const.EMAIL);
-        if (!validResponse.isSuccess()){
+        if (!validResponse.isSuccess()){    //失败
             return validResponse;
         }
-
         user.setRole(Const.Role.ROLE_CUSTOMER);
         //将用户输入的密码进行MD5加密
         user.setPassword(MD5Utils.MD5EncodeUtf8(user.getPassword()));
-
         int resultCount = userMapper.insert(user);
         if (resultCount == 0) {
             return ServerResponse.createByErrorMessage("注册失败");
@@ -201,14 +199,8 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createBySuccess(user);
     }
 
-
     //backend
-
-    /**
-     * 校验是否是管理员
-     * @param user
-     * @return
-     */
+    //校验是否是管理员*/
     public ServerResponse checkAdminRole(User user){
         if (user != null && user.getRole().intValue() == Const.Role.ROLE_ADMIN){
             return ServerResponse.createBySuccess();

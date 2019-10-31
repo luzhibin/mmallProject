@@ -13,5 +13,5 @@ public interface ICategoryService {
     //根据品类名称获取子结点的平级品类信息
     ServerResponse<List<Category>> getChildrenParallelCategory(Integer categoryId);
 
-    ServerResponse selectCategoryAndChildrenById(Integer categoryId);
+    ServerResponse<List<Integer>> selectCategoryAndChildrenById(Integer categoryId);
 }

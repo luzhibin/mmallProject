@@ -28,7 +28,7 @@ public class PropertiesUtil {
     }
 
     public static String getProperty(String key){
-        String value = props.getProperty(key.trim());
+        String value = props.getProperty(key.trim());//trim避免两边的空格
         if(StringUtils.isBlank(value)){
             return null;
         }
