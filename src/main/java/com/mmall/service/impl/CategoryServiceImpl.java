@@ -1,15 +1,26 @@
 package com.mmall.service.impl;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import com.mmall.common.ServerResponse;
 import com.mmall.dao.CategoryMapper;
 import com.mmall.pojo.Category;
 import com.mmall.service.ICategoryService;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
+
+import java.util.List;
+import java.util.Set;
 
 @Service("iCategoryService")
 public class CategoryServiceImpl implements ICategoryService {
+
+    //日志
+    private Logger logger = LoggerFactory.getLogger(CategoryServiceImpl.class);
 
     @Autowired
     private  CategoryMapper categoryMapper;
@@ -32,7 +43,71 @@ public class CategoryServiceImpl implements ICategoryService {
     }
 
     //更新品类名称
-    public ServerResponse updateCategoryName(){
-        return  null;
+    public ServerResponse updateCategoryName(Integer categoryId,String categoryName){
+        //对参数进行判断和校验
+        if (categoryId == null || StringUtils.isBlank(categoryName)){
+            return ServerResponse.createByErrorMessage("更新品类参数错误");
+        }
+        Category category = new Category();
+        category.setId(categoryId);
+        category.setName(categoryName);
+
+        int rowCount = categoryMapper.updateByPrimaryKeySelective(category);
+        if(rowCount > 0){
+            return ServerResponse.createBySuccess("更新品类名称成功");
+        }
+        return ServerResponse.createByErrorMessage("更新品类名称失败");
+    }
+
+    //根据品类名称获取子结点的平级品类信息，不递归
+    public ServerResponse<List<Category>> getChildrenParallelCategory(Integer categoryId){
+        List<Category> categoryList = categoryMapper.selectCategoryChildrenByParentId(categoryId);
+        if (CollectionUtils.isEmpty(categoryList)){
+            //打印一行日志，因为如果得到一个空的没有子元素的集合，就不需要给前端返回
+            logger.info("未找到当前分类的子分类");
+        }
+        return ServerResponse.createBySuccess(categoryList);
+    }
+
+    /**
+     * 获取当前categoryId并且递归查询子结点的categoryId
+     * @param categoryId
+     * @return
+     */
+    public ServerResponse selectCategoryAndChildrenById(Integer categoryId){
+        Set<Category> categorySet = Sets.newHashSet();
+        findChildCategory(categorySet,categoryId);
+
+        //返回值是categoryId的一个集合
+        List<Integer> categoryIdList = Lists.newArrayList();
+        if (categoryId != null){
+            for (Category categoryItem : categorySet) {
+                categoryIdList.add(categoryItem.getId());
+            }
+        }
+        return ServerResponse.createBySuccess(categoryIdList);
+    }
+
+    //使用递归算法，算出子节点
+    private Set<Category> findChildCategory(Set<Category> categorySet,Integer categoryId){  //set集合里是实体类对象的时候，需要重写equals和hashCode方法
+        Category category = categoryMapper.selectByPrimaryKey(categoryId);
+        if (category != null){
+            categorySet.add(category);
+        }
+        //查找子节点，递归算法一定要有一个退出的条件
+        List<Category> categoryList = categoryMapper.selectCategoryChildrenByParentId(categoryId);
+        for (Category categoryItem : categoryList) {
+            findChildCategory(categorySet,categoryItem.getId());
+        }
+        return categorySet;
     }
 }
+
+
+
+
+
+
+
+
+

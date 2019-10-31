@@ -21,7 +21,7 @@
     from mmall_category
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from mmall_category
     where id = #{id,jdbcType=INTEGER}
   </delete>
@@ -116,4 +116,12 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+    <!--根据categoryId获取孩子结点的category信息-->
+    <select id="selectCategoryChildrenByParentId" resultMap="BaseResultMap" resultType="int">
+      select
+      <include refid="Base_Column_List"/>
+      from mmall_category
+      where parent_id = #{parentId}
+    </select>
 </mapper>

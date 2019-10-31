@@ -182,7 +182,9 @@
 
 
         <!-- mybatis pager -->
-
+        <!--开源的分页技术包-->
+        <!--通过AOP的方式，在执行自己的SQL语句时，只要在sql语句后面写上分页处理-->
+        <!--Mybatis pagehelper就会监听到这个切面，通过AOP，执行分页需要用到的sql-->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>

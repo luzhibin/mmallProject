@@ -45,7 +45,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     public ServerResponse<String> register(User user) {
-        //在注册时需要校验用户名是否存在，如果不校验，那么攻击者可以通过自动调用接口的方式实现纵向越权
+        //在注册时需要校验用户名是否存在，如果不校验，那么攻击者可以通过自动调用接口的方式实现横向越权
         //需要校验username和email
         //检查用户名是否存在
         ServerResponse validResponse = this.checkValid(user.getUsername(), Const.USERNAME);
