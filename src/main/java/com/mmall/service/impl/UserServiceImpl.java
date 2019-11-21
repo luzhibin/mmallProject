@@ -30,7 +30,6 @@ public class UserServiceImpl implements IUserService {
         if (resultCount == 0) {
             return ServerResponse.createByErrorMessage("用户名不存在");
         }
-
         //todo 预留密码登录 密码用MD5加密
         //比较用MD5加密后的密码
         String md5Password = MD5Utils.MD5EncodeUtf8(password);
@@ -39,7 +38,7 @@ public class UserServiceImpl implements IUserService {
         if (user == null) {
             return ServerResponse.createByErrorMessage("密码错误");
         }
-
+        //将密码置空
         user.setPassword(StringUtils.EMPTY);
         return ServerResponse.createBySuccess("登陆成功", user);
     }

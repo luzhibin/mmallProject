@@ -22,11 +22,23 @@
     from mmall_cart
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from mmall_cart
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.mmall.pojo.Cart" >
+
+    <delete id="deleteByUserIdProductIds" parameterType="map">
+        delete from mmall_cart
+        where user_id = #{userId}
+        <if test="productIdList != null">
+          and product_id in
+            <foreach collection="productIdList" item="item" index="index" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+    </delete>
+
+    <insert id="insert" parameterType="com.mmall.pojo.Cart" >
     insert into mmall_cart (id, user_id, product_id, 
       quantity, checked, create_time, 
       update_time)
@@ -117,4 +129,23 @@
       update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+    <select id="selectCartByUserIdProductId" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from mmall_cart
+        where user_id = #{userId}
+        and product_id = #{productId}
+    </select>
+    <select id="selectCartByUserId" resultMap="BaseResultMap" parameterType="int">
+        select
+        <include refid="Base_Column_List"/>
+        from mmall_cart
+        where user_id = #{userId}
+    </select>
+
+    <!--判断是否全选，只需要传入userId然后判断未勾选的数量，如果大于0，则未全选，反之就是全选-->
+    <select id="selectCartProductCheckedStatusByUserId" resultType="java.lang.Integer" parameterType="int">
+        select count(1) from mmall_cart where check = 0 and user_id = #{userId}
+    </select>
 </mapper>
