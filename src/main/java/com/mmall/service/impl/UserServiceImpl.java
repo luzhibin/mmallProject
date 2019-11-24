@@ -68,7 +68,7 @@ public class UserServiceImpl implements IUserService {
 
     //实时校验,检查用户名和邮箱是否有效，将该功能抽象成一个方法，需要使用时就调用
     public ServerResponse<String> checkValid(String str, String type) {
-        //str是value值，type会通过username或email来判断str调用的是哪个sql，再进行校验
+        //str是key值，type会通过username或email来判断str调用的是哪个sql，再进行校验
         if (StringUtils.isNotBlank(type)) {
             //开始校验
             //检查用户名是否存在

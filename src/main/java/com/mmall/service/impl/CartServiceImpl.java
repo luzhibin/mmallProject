@@ -46,6 +46,7 @@ public class CartServiceImpl implements ICartService {
             cartItem.setChecked(Const.Cart.CHECKED);
             cartItem.setProductId(productId);
             cartItem.setUserId(userId);
+
             cartMapper.insert(cartItem);
         }else{
             //这个产品已经在购物车里了
@@ -54,8 +55,7 @@ public class CartServiceImpl implements ICartService {
             cart.setQuantity(count);
             cartMapper.updateByPrimaryKeySelective(cart);//按主键选择性更新
         }
-        CartVo cartVo = this.getCartVoLimit(userId);
-        return ServerResponse.createBySuccess(cartVo);
+        return this.list(userId);
     }
 
     public ServerResponse<CartVo> updateProduct(Integer userId,Integer productId,Integer count){
@@ -67,8 +67,7 @@ public class CartServiceImpl implements ICartService {
             cart.setQuantity(count);
         }
         //cartMapper.updateByPrimaryKeySelective(cart);
-        CartVo cartVo = this.getCartVoLimit(userId);
-        return ServerResponse.createBySuccess(cartVo);
+        return this.list(userId);
     }
 
     public ServerResponse<CartVo> deleteProduct(Integer userId, String productIds){
@@ -77,8 +76,7 @@ public class CartServiceImpl implements ICartService {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(),ResponseCode.ILLEGAL_ARGUMENT.getDesc());
         }//todo
         cartMapper.deleteByUserIdProductIds(userId,productList);
-        CartVo cartVo = this.getCartVoLimit(userId);
-        return ServerResponse.createBySuccess(cartVo);
+        return this.list(userId);
     }
 
     //购物车 利用CartVo和CartProductVo进行一个拼装的返回
@@ -145,5 +143,24 @@ public class CartServiceImpl implements ICartService {
             return false;
         }
         return cartMapper.selectCartProductCheckedStatusByUserId(userId) == 0;
+    }
+
+    public ServerResponse<CartVo>list (Integer userId){
+        CartVo cartVo = this.getCartVoLimit(userId);
+        return ServerResponse.createBySuccess(cartVo);
+    }
+
+    //商品全选或反选
+    public ServerResponse<CartVo> selectOrUnSelect(Integer userId,Integer productId,Integer checked){
+        cartMapper.checkOrUncheckedProduct(userId,productId,checked);
+        return this.list(userId);
+    }
+
+    public ServerResponse<Integer> getCartProductCount(Integer userId){
+        if (userId == null){
+            return ServerResponse.createBySuccess(0);
+        }
+        //查询当前用户购物车中的商品总数量
+        return ServerResponse.createBySuccess(cartMapper.selectCartProductCount(userId));
     }
 }

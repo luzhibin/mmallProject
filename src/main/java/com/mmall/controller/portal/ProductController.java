@@ -23,6 +23,7 @@ public class ProductController {
         return iProductService.getProductDetail(productId);
     }
 
+    //todo 访问list.do接口报500错误
     @RequestMapping("list.do")
     @ResponseBody
     public ServerResponse<PageInfo> list(@RequestParam(value = "keyword",required = false)String keyword,

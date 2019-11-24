@@ -30,4 +30,11 @@ public interface CartMapper {
 
     //删除购物车商品
     int deleteByUserIdProductIds(@Param("userId") Integer userId,@Param("productIdList") List<String> productIdList);
+
+    //全选或反选商品
+    int checkOrUncheckedProduct(@Param("userId") Integer userId,@Param("productId") Integer productId,@Param("checked") Integer checked);
+
+    //查询当前用户购物车中的商品总数量
+    int selectCartProductCount(@Param("userId") Integer userId);
+
 }
