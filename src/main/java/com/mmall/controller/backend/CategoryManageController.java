@@ -3,6 +3,7 @@ package com.mmall.controller.backend;
 import com.mmall.common.Const;
 import com.mmall.common.ResponseCode;
 import com.mmall.common.ServerResponse;
+import com.mmall.pojo.Category;
 import com.mmall.pojo.User;
 import com.mmall.service.ICategoryService;
 import com.mmall.service.IUserService;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 //处理后台商品分类的controller
 @Controller
@@ -77,15 +79,16 @@ public class CategoryManageController {
     }
 
     /**
-     * 这个接口是根据传入的categoryId获取当前categoryId下的子结点的category信息，且子结点是平级的，不递归
+     * 这个接口是根据传入的categoryId获取当前categoryId下的子节点的category信息，且子节点是平级的，不递归
      * @param session
      * @param categoryId
      * @return
      */
     @RequestMapping("get_category.do")
     @ResponseBody
-    public ServerResponse getChildrenParallelCategory(HttpSession session,@RequestParam(value = "categoryId",defaultValue = "0") Integer categoryId){
-        //如果没有传入categoryId,那么它的默认值就为0，代表category的根结点
+    //获取下一级的平级的所有节点
+    public ServerResponse<List<Category>> getChildrenParallelCategory(HttpSession session, @RequestParam(value = "categoryId",defaultValue = "0") Integer categoryId){
+        //如果没有传入categoryId,那么它的默认值就为0，代表category的根节点
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         //判断是否已经登录
         if(user == null){
@@ -94,18 +97,20 @@ public class CategoryManageController {
         //校验用户是否是管理员
         if(iUserService.checkAdminRole(user).isSuccess()){
 
-            //查询子结点的category信息，不使用递归，保持平级
+            //查询子节点的category信息，不使用递归，保持平级
             return iCategoryService.getChildrenParallelCategory(categoryId);
         }else{  //不是管理员，直接返回
             return ServerResponse.createByErrorMessage("无权限操作，需要管理员权限");
         }
     }
 
-    //获取当前categoryId并且递归查询子结点的categoryId
+    //获取当前categoryId并且递归查询子节点的categoryId
+    /*其实这个接口主要是为了在商品搜索的时候，在服务端内部使用，也就是说查询某个分类id的时候，
+    把这个商品所在所有的子品类id也要拿出来，然后进行便利查看。*/
     @RequestMapping("get_deep_category.do")
     @ResponseBody
     public ServerResponse getCategoryAndDeepChildrenCategory(HttpSession session,@RequestParam(value = "categoryId",defaultValue = "0") Integer categoryId){
-        //如果没有传入categoryId,那么它的默认值就为0，代表category的根结点
+        //如果没有传入categoryId,那么它的默认值就为0，代表category的根节点
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         //判断是否已经登录
         if(user == null){
@@ -113,7 +118,7 @@ public class CategoryManageController {
         }
         //校验用户是否是管理员
         if(iUserService.checkAdminRole(user).isSuccess()){
-            //查询当前结点的id和递归子结点的id
+            //查询当前节点的id和递归子节点的id
             return iCategoryService.selectCategoryAndChildrenById(categoryId);
         }else{  //不是管理员，直接返回
             return ServerResponse.createByErrorMessage("无权限操作，需要管理员权限");
