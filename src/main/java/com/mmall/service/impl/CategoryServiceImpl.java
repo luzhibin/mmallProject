@@ -25,6 +25,7 @@ public class CategoryServiceImpl implements ICategoryService {
     @Autowired
     private  CategoryMapper categoryMapper;
 
+    //增加商品分类，参数：商品分类名称和父节点ID(默认值为0)
     public ServerResponse addCategory(String categoryName,Integer parentId){
         if (parentId == null || StringUtils.isBlank(categoryName)){
             return ServerResponse.createByErrorMessage("添加品类参数错误");
@@ -51,7 +52,7 @@ public class CategoryServiceImpl implements ICategoryService {
         Category category = new Category();
         category.setId(categoryId);
         category.setName(categoryName);
-
+        //通过主键选择性更新，即通过主键更新分类名称
         int rowCount = categoryMapper.updateByPrimaryKeySelective(category);
         if(rowCount > 0){
             return ServerResponse.createBySuccess("更新品类名称成功");
@@ -59,9 +60,10 @@ public class CategoryServiceImpl implements ICategoryService {
         return ServerResponse.createByErrorMessage("更新品类名称失败");
     }
 
-    //根据品类名称获取子结点的平级品类信息，不递归
+    //根据分类名称获取子节点分类的平级分类信息，不递归
     public ServerResponse<List<Category>> getChildrenParallelCategory(Integer categoryId){
         List<Category> categoryList = categoryMapper.selectCategoryChildrenByParentId(categoryId);
+        //做一个空判断 isEmpty不止判断了它本身是不是空，同时也判断了它是否是一个空的集合(即里面为0个元素的集合)
         if (CollectionUtils.isEmpty(categoryList)){
             //打印一行日志，因为如果得到一个空的没有子元素的集合，就不需要给前端返回
             logger.info("未找到当前分类的子分类");
@@ -74,9 +76,11 @@ public class CategoryServiceImpl implements ICategoryService {
      * @param categoryId
      * @return
      */
+    //服务器内部调用的接口的实现类，根据categoryId查询子节点的categoryId，递归查询
+    //拿到categoryId后，需要判断该节点下是否有子节点，如果有子节点，那么还需要判断子节点下是否还有子节点
     public ServerResponse<List<Integer>> selectCategoryAndChildrenById(Integer categoryId){
         Set<Category> categorySet = Sets.newHashSet();
-        findChildCategory(categorySet,categoryId);
+        this.findChildCategory(categorySet,categoryId);
 
         //返回值是categoryId的一个集合
         List<Integer> categoryIdList = Lists.newArrayList();

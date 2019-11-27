@@ -6,6 +6,7 @@ import com.mmall.pojo.Category;
 import java.util.List;
 
 public interface ICategoryService {
+    //增加商品分类
     ServerResponse addCategory(String categoryName, Integer parentId);
 
     ServerResponse updateCategoryName(Integer categoryId,String categoryName);

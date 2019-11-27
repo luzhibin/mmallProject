@@ -7,6 +7,7 @@ import java.util.List;
 public interface CategoryMapper {
     int deleteByPrimaryKey(Integer id);
 
+    //添加商品分类
     int insert(Category record);
 
     int insertSelective(Category record);
@@ -17,6 +18,6 @@ public interface CategoryMapper {
 
     int updateByPrimaryKey(Category record);
 
-    //根据categoryId获取孩子结点的category信息
+    //根据categoryId获取子节点平级category信息
     List<Category> selectCategoryChildrenByParentId(Integer parentId);
 }

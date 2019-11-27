@@ -17,6 +17,7 @@
     id, parent_id, name, status, sort_order, create_time, update_time
   </sql>
 
+  <!--传入-->
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -27,6 +28,8 @@
     delete from mmall_category
     where id = #{id,jdbcType=INTEGER}
   </delete>
+
+  <!--传入-->
   <insert id="insert" parameterType="com.mmall.pojo.Category" >
     insert into mmall_category (id, parent_id, name, 
       status, sort_order, create_time, 
@@ -35,6 +38,7 @@
       #{status,jdbcType=BIT}, #{sortOrder,jdbcType=INTEGER}, now(),
       now())
   </insert>
+
   <insert id="insertSelective" parameterType="com.mmall.pojo.Category" >
     insert into mmall_category
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -119,9 +123,10 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-    <!--根据categoryId获取孩子结点的category信息-->
+    <!--根据categoryId获取子节点的平级category信息-->
   <!--<include refid="Base_Column_List"/>会自动把上面的代码贴过来-->
-    <select id="selectCategoryChildrenByParentId" resultMap="BaseResultMap" resultType="int">
+  <!--实现类里的返回值是一个list集合，mybatis已经把list封装好了，直接返回对象BaseResultMap-->
+    <select id="selectCategoryChildrenByParentId" resultMap="BaseResultMap" parameterType="int">
       select
       <include refid="Base_Column_List"/>
       from mmall_category

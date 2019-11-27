@@ -3,20 +3,21 @@ package com.mmall.pojo;
 import java.util.Date;
 import java.util.Objects;
 
+//商品种类
 public class Category {
-    private Integer id;
+    private Integer id; //id：类别ID
 
-    private Integer parentId;
+    private Integer parentId;  //父类别id，当id=0时说明是根节点，一级类别
 
-    private String name;
+    private String name;    //类别名称
 
-    private Boolean status;
+    private Boolean status; //类别状态 1-正常 2-已废弃
 
-    private Integer sortOrder;
+    private Integer sortOrder;  //排序编号  同类展示顺序，数值相等则自然排序  为排序分类留的扩展
 
-    private Date createTime;
+    private Date createTime;    //创建时间
 
-    private Date updateTime;
+    private Date updateTime;    //更新时间
 
     public Category(Integer id, Integer parentId, String name, Boolean status, Integer sortOrder, Date createTime, Date updateTime) {
         this.id = id;
@@ -88,6 +89,7 @@ public class Category {
         this.updateTime = updateTime;
     }
 
+    //重写equals和hashcode方法
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
