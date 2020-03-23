@@ -29,7 +29,7 @@ public class FileServiceImpl implements IFileService {
         File fileDir = new File(path);
         //判断文件夹是否存在，如果不存在，就赋予可写权限，然后创建它
         if (!fileDir.exists()){
-            fileDir.setWritable(true);
+            fileDir.setWritable(true);//赋予可写权限
             fileDir.mkdirs();
         }
         //创建文件

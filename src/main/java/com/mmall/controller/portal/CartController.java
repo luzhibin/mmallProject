@@ -42,7 +42,7 @@ public class CartController {
         if (user == null){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),ResponseCode.NEED_LOGIN.getDesc());
         }
-        return iCartService.addProduct(user.getId(),productId,count);
+        return iCartService.add(user.getId(),productId,count);
     }
 
     //更新购物车商品
@@ -53,7 +53,7 @@ public class CartController {
         if (user == null){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),ResponseCode.NEED_LOGIN.getDesc());
         }
-        return iCartService.updateProduct(user.getId(),productId,count);
+        return iCartService.update(user.getId(),productId,count);
     }
 
     //删除购物车商品

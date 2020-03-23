@@ -53,7 +53,7 @@ public class ShippingServiceImpl implements IShippingService {
         shipping.setUserId(userId);
         int rowCount = shippingMapper.updateByShipping(shipping);
         if (rowCount>0){
-            return ServerResponse.createBySuccess("更新地址失败");
+            return ServerResponse.createBySuccess("更新地址成功");
         }
         return ServerResponse.createByErrorMessage("更新地址失败");
     }
@@ -65,7 +65,7 @@ public class ShippingServiceImpl implements IShippingService {
         if (shipping == null){
             return ServerResponse.createByErrorMessage("无法查询到该地址");
         }
-        return ServerResponse.createBySuccess("更新地址成功",shipping);
+        return ServerResponse.createBySuccess("查询地址信息成功",shipping);
     }
 
     //查询某个用户的所有收货地址

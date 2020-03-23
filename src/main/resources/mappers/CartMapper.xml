@@ -133,7 +133,7 @@
   <!--全选或全反选-->
   <update id="checkOrUncheckedProduct" parameterType="map">
     UPDATE mmall_cart
-    set checked = #{checked}
+    set checked = #{checked},
     update_time = now()
     where user_id = #{userId}
     <if test="productId != null">
@@ -147,8 +147,7 @@
         from mmall_cart
         where user_id = #{userId}
         and product_id = #{productId}
-
-    </select>
+  </select>
     <select id="selectCartByUserId" resultMap="BaseResultMap" parameterType="int">
         select
         <include refid="Base_Column_List"/>
@@ -158,14 +157,14 @@
 
     <!--判断是否全选，只需要传入userId然后判断未勾选的数量，如果大于0，则未全选，反之就是全选-->
     <select id="selectCartProductCheckedStatusByUserId" resultType="java.lang.Integer" parameterType="int">
-        select count(1) from mmall_cart where check = 0 and user_id = #{userId}
+        select count(1) from mmall_cart where checked = 0 and user_id = #{userId}
     </select>
 
   <!--查询当前用户购物车中的商品总数量-->
   <!--IFNULL()函数用于判断第一个表达式是否为 NULL，如果为 NULL 则返回第二个参数的值，如果不为 NULL 则返回第一个参数的值。-->
   <!--mapper声明的时候是int，如果查询userId不存在，则sum为null，null是无法赋予给基本类型的-->
   <select id="selectCartProductCount" resultType="java.lang.Integer" parameterType="int">
-    select IFNULL(sum(quantity,0)) as count
+    select IFNULL(sum(quantity),0) as count
     from mmall_cart
     where user_id = #{userId}
   </select>

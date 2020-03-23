@@ -9,9 +9,9 @@ import com.mmall.vo.CartVo;
 public interface ICartService {
     ServerResponse<CartVo>list (Integer userId);
 
-    ServerResponse<CartVo> addProduct(Integer userId, Integer productId, Integer count);
+    ServerResponse<CartVo> add(Integer userId, Integer productId, Integer count);
 
-    ServerResponse<CartVo> updateProduct(Integer userId,Integer productId,Integer count);
+    ServerResponse<CartVo> update(Integer userId,Integer productId,Integer count);
 
     ServerResponse<CartVo> deleteProduct(Integer id, String productIds);
 

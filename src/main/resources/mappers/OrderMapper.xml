@@ -198,4 +198,21 @@
       update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <!--根据orderNo和userId查询该订单是否存在-->
+  <select id="selectByUserIdAndOrderNo" resultMap="BaseResultMap" parameterType="map">
+    select
+    <include refid="Base_Column_List"></include>
+    from mmall_order
+    where  order_no = #{orderNo}
+    and userId = #{userId}
+  </select>
+
+  <select id="selectByOrderNo" resultMap="BaseResultMap" parameterType="long">
+    select
+    <include refid="Base_Column_List">
+    </include>
+    from mmall_order
+    where order_no=#{orderNo}
+  </select>
 </mapper>

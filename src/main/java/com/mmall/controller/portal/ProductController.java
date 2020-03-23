@@ -26,7 +26,7 @@ public class ProductController {
     //todo 访问list.do接口报500错误
     @RequestMapping("list.do")
     @ResponseBody
-    public ServerResponse<PageInfo> list(@RequestParam(value = "keyword",required = false)String keyword,
+    public ServerResponse<PageInfo> list(@RequestParam(value = "keyword",required = false)String keyword,   //关键字
                                          @RequestParam(value = "categoryId",required = false)Integer categoryId,
                                          @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
                                          @RequestParam(value = "pageSize",defaultValue = "10") int pageSize,

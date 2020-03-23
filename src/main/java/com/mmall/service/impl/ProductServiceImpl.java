@@ -179,6 +179,7 @@ public class ProductServiceImpl implements IProductService {
         }
         //分页
         PageInfo pageResult = new PageInfo(productList);
+        System.out.println("ProductServiceImpl,pageResult"+pageResult);
         //把List重置
         pageResult.setList(productListVoList);
         return ServerResponse.createBySuccess(pageResult);
@@ -204,10 +205,11 @@ public class ProductServiceImpl implements IProductService {
         if (StringUtils.isBlank(keyword) && categoryId == null){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(),ResponseCode.ILLEGAL_ARGUMENT.getDesc());
         }
-        List<Integer> categoryIdList = new ArrayList<>();
-        //该集合的作用：当分类的时候，传一个高级商品，比如电子产品，下一级还有手机，手机下一级又有其他分类
-        //当传一个大的父类的时候，就要调用递归算法，把所有属于这个分类的子分类都遍历出来，并且加上该分类本身
-        //把所有categoryId放到categoryIdList里，查询sql时就可以直接用一个int
+        List<Integer> categoryIdList = new ArrayList<Integer>();
+        /*该集合的作用：当分类的时候，传一个高级商品，比如电子产品，下一级还有手机，手机下一级又有其他分类
+        *当传一个大的父类的时候，就要调用递归算法，把所有属于这个分类的子分类都遍历出来，并且加上该分类本身
+        *把所有categoryId放到categoryIdList里，查询sql时就可以直接用一个int
+        * */
         if (categoryId != null){
             Category category = categoryMapper.selectByPrimaryKey(categoryId);
             if (category == null && StringUtils.isBlank(keyword)){
@@ -229,7 +231,7 @@ public class ProductServiceImpl implements IProductService {
         if (StringUtils.isNotBlank(orderBy)){
             if (Const.ProductListOrderBy.PRICE_ASC_DESC.contains(orderBy)) {
                 String[] orderByArray = orderBy.split("_");//使用下划线进行分割
-                PageHelper.orderBy(orderByArray[0] + "" + orderByArray[1]);
+                PageHelper.orderBy(orderByArray[0]+" "+orderByArray[1]);
             }
         }
         List<Product> productList = productMapper.selectByNameAndCategoryIds(StringUtils.isBlank(keyword)?null:keyword,categoryIdList.size()==0?null:categoryIdList);

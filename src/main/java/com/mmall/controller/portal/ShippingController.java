@@ -71,6 +71,8 @@ public class ShippingController {
     }
 
     //分页的接口
+    @RequestMapping("list.do")
+    @ResponseBody
     public ServerResponse<PageInfo> list(@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,//当前页
                                          @RequestParam(value = "pageSize",defaultValue = "10") int pageSize,//每页的数量
                                          HttpSession session){

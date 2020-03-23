@@ -35,6 +35,7 @@ public class PropertiesUtil {
         return value.trim();
     }
 
+    //方法重载，如果value为空，就把defaultValue赋值给value
     public static String getProperty(String key,String defaultValue){
 
         String value = props.getProperty(key.trim());
