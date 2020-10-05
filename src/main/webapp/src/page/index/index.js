@@ -1,2 +1,4 @@
-cats = require('./cats.js');
-console.log(cats);
+'use strict';
+
+require('./index.css');
+require('../module.js');
