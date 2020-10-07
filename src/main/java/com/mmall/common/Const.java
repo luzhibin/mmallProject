@@ -1,7 +1,6 @@
 package com.mmall.common;
 
 import com.google.common.collect.Sets;
-import jdk.net.SocketFlow;
 
 import java.util.Set;
 
@@ -79,15 +78,6 @@ public class Const {
         public int getCode() {
             return code;
         }
-
-        public static OrderStatusEnum codeOf(int code){
-            for (OrderStatusEnum orderStatusEnum : values()){
-                if (orderStatusEnum.getCode() == code){
-                    return orderStatusEnum;
-                }
-            }
-            throw new RuntimeException("没有找到对应的枚举");
-        }
     }
 
     public interface AlipayCallback{
@@ -115,38 +105,6 @@ public class Const {
 
         public int getCode() {
             return code;
-        }
-    }
-
-    //在线支付
-    public enum PaymentTypeEnum{
-
-        ONLINE_PAY(1,"在线支付");
-        //构造器
-        PaymentTypeEnum(int code,String value){
-            this.code = code;
-            this.value = value;
-        }
-
-        private int code;
-        private String value;
-
-        public String getValue() {
-            return value;
-        }
-
-        public int getCode() {
-            return code;
-        }
-
-        //
-        public static PaymentTypeEnum codeOf(int code){
-            for (PaymentTypeEnum paymentTypeEnum : values()){
-                if (paymentTypeEnum.getCode() == code){
-                    return paymentTypeEnum;
-                }
-            }
-            throw new RuntimeException("没有找到对应的枚举");
         }
     }
 }

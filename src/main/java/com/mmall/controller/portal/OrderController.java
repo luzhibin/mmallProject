@@ -34,16 +34,6 @@ public class OrderController {
     @Autowired
     private IOrderService iOrderService;
 
-    @RequestMapping("create.do")
-    @ResponseBody
-    public ServerResponse create(HttpSession httpSession,Integer shippingId){
-        User user = (User) httpSession.getAttribute(Const.CURRENT_USER);
-        if (user == null){
-            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),ResponseCode.NEED_LOGIN.getDesc());
-        }
-        return iOrderService.createOrder(user.getId(),shippingId);
-    }
-
     @RequestMapping("pay.do")
     @ResponseBody
     public ServerResponse pay(HttpSession httpSession, Long orderNo, HttpServletRequest request){

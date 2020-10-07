@@ -35,14 +35,7 @@ public class CartServiceImpl implements ICartService {
     @Autowired
     private ProductMapper productMapper;
 
-    /**
-     *  购物车模块add.do接口
-     * 加入购物车
-     * @param userId
-     * @param productId
-     * @param count
-     * @return
-     */
+    //根据用户ID和商品ID进行查询
     public ServerResponse<CartVo> add(Integer userId,Integer productId,Integer count){
         if (productId == null || count == null){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(), ResponseCode.ILLEGAL_ARGUMENT.getDesc());
